@@ -16,6 +16,7 @@
 #include "TestAfter.h"
 #include "TestBuilder.h"
 #include "ObjectPool.h"
+#include "CommandManager.h"
 
 #define WINDOW
 int main(int argc, const char * argv[]) {
@@ -65,6 +66,14 @@ int main(int argc, const char * argv[]) {
     pool->releaseResource(res1);
     pool->releaseResource(res2);
     delete pool;
-     */
+    */
+    
+    // prototype
+    ICamCommand* command = CommandManager::createCommand(CommandType::DOME_COMMAND);
+    command->execute();
+    
+    delete command;
+    command = CommandManager::createCommand(CommandType::SURVEILANCE_COMMAND);
+    command->execute();
     return 0;
 }

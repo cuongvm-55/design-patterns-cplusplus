@@ -13,6 +13,7 @@
 		181F23062302ADB600258081 /* HenryStooge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181F23042302ADB600258081 /* HenryStooge.cpp */; };
 		181F23092302AE6600258081 /* StoogeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181F23072302AE6600258081 /* StoogeFactory.cpp */; };
 		1824ACF82303E50800912719 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1824ACF72303E50800912719 /* ObjectPool.cpp */; };
+		1824AD00230411F400912719 /* CommandManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1824ACFF230411F400912719 /* CommandManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,11 @@
 		1824ACF52303E31500912719 /* Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
 		1824ACF62303E3C900912719 /* ObjectPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
 		1824ACF72303E50800912719 /* ObjectPool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectPool.cpp; sourceTree = "<group>"; };
+		1824ACFB23040E3D00912719 /* ICamCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICamCommand.h; sourceTree = "<group>"; };
+		1824ACFC23040E6A00912719 /* DomeCamCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomeCamCommand.h; sourceTree = "<group>"; };
+		1824ACFD23040F0400912719 /* SurveilanceCamCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurveilanceCamCommand.h; sourceTree = "<group>"; };
+		1824ACFE23040F6600912719 /* CommandManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
+		1824ACFF230411F400912719 /* CommandManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CommandManager.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +96,7 @@
 		181F22F22302A86800258081 /* CPlusPlusDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
-				1824ACF42303DFA500912719 /* ObjectPool */,
-				181F23172302C33900258081 /* Builder */,
-				181F230A2302B60100258081 /* AbstractFactory */,
-				181F22FE2302ACBA00258081 /* FactoryMethod */,
-				181F22FA2302A87B00258081 /* Singleton */,
+				1824ACFA23040DF000912719 /* CreationPatterns */,
 				181F22F32302A86800258081 /* main.cpp */,
 			);
 			path = CPlusPlusDesignPatterns;
@@ -163,6 +165,31 @@
 			path = ObjectPool;
 			sourceTree = "<group>";
 		};
+		1824ACF923040DD000912719 /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				1824ACFB23040E3D00912719 /* ICamCommand.h */,
+				1824ACFC23040E6A00912719 /* DomeCamCommand.h */,
+				1824ACFD23040F0400912719 /* SurveilanceCamCommand.h */,
+				1824ACFE23040F6600912719 /* CommandManager.h */,
+				1824ACFF230411F400912719 /* CommandManager.cpp */,
+			);
+			path = Prototype;
+			sourceTree = "<group>";
+		};
+		1824ACFA23040DF000912719 /* CreationPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				1824ACF923040DD000912719 /* Prototype */,
+				1824ACF42303DFA500912719 /* ObjectPool */,
+				181F23172302C33900258081 /* Builder */,
+				181F230A2302B60100258081 /* AbstractFactory */,
+				181F22FE2302ACBA00258081 /* FactoryMethod */,
+				181F22FA2302A87B00258081 /* Singleton */,
+			);
+			path = CreationPatterns;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1824ACF82303E50800912719 /* ObjectPool.cpp in Sources */,
+				1824AD00230411F400912719 /* CommandManager.cpp in Sources */,
 				181F22F42302A86800258081 /* main.cpp in Sources */,
 				181F22FD2302A89E00258081 /* Singleton.cpp in Sources */,
 				181F23032302AD6A00258081 /* LarryStooge.cpp in Sources */,
