@@ -22,20 +22,7 @@ enum CommandType
 class CommandManager
 {
 public:
-    
-    static ICamCommand* createCommand(CommandType type)
-    {
-        if (m_commandDict.find(type) == m_commandDict.end())
-        {
-            // not found
-            return nullptr;
-        }
-        else
-        {
-            // found
-            return m_commandDict.at(type)->clone();
-        }
-    }
+    static ICamCommand* createCommand(CommandType type);
     
 private:
     static const std::map<CommandType, ICamCommand*> m_commandDict;

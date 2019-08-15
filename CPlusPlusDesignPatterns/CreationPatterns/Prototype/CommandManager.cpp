@@ -14,3 +14,14 @@ const std::map<CommandType, ICamCommand*> CommandManager::m_commandDict =
     {DOME_COMMAND, new DomeCamCommand()},
     {SURVEILANCE_COMMAND, new SurveilanceCamCommand()}
 };
+
+ICamCommand* CommandManager::createCommand(CommandType type)
+{
+    if (m_commandDict.find(type) == m_commandDict.end())
+    {
+        // not found
+        return nullptr;
+    }
+    // found
+    return m_commandDict.at(type)->clone();
+}

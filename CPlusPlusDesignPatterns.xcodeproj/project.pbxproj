@@ -64,6 +64,18 @@
 		1824ACFD23040F0400912719 /* SurveilanceCamCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurveilanceCamCommand.h; sourceTree = "<group>"; };
 		1824ACFE23040F6600912719 /* CommandManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
 		1824ACFF230411F400912719 /* CommandManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CommandManager.cpp; sourceTree = "<group>"; };
+		1824AD0223053ECF00912719 /* AdapterClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdapterClient.h; sourceTree = "<group>"; };
+		1824AD0323053EF900912719 /* Interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interface.h; sourceTree = "<group>"; };
+		1824AD0423053F2600912719 /* Adaptee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adaptee.h; sourceTree = "<group>"; };
+		1824AD0623053FAB00912719 /* Adapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adapter.h; sourceTree = "<group>"; };
+		1824AD0723053FDC00912719 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		1824AD082305409800912719 /* LegacyProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegacyProduct.h; sourceTree = "<group>"; };
+		1824AD0E23054F3200912719 /* TimeImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeImpl.h; sourceTree = "<group>"; };
+		1824AD0F23054FF300912719 /* CivilianTimeImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CivilianTimeImpl.h; sourceTree = "<group>"; };
+		1824AD10230550E400912719 /* ZuluTimeImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuluTimeImp.h; sourceTree = "<group>"; };
+		1824AD112305515600912719 /* Time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
+		1824AD12230551DD00912719 /* CivilianTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CivilianTime.h; sourceTree = "<group>"; };
+		1824AD132305521F00912719 /* ZuluTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuluTime.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		181F22F22302A86800258081 /* CPlusPlusDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				1824AD012305388600912719 /* StructuralPatterns */,
 				1824ACFA23040DF000912719 /* CreationPatterns */,
 				181F22F32302A86800258081 /* main.cpp */,
 			);
@@ -188,6 +201,41 @@
 				181F22FA2302A87B00258081 /* Singleton */,
 			);
 			path = CreationPatterns;
+			sourceTree = "<group>";
+		};
+		1824AD012305388600912719 /* StructuralPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				1824AD0923054B4900912719 /* Bridge */,
+				1824AD0523053F6400912719 /* Adapter */,
+			);
+			path = StructuralPatterns;
+			sourceTree = "<group>";
+		};
+		1824AD0523053F6400912719 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				1824AD0223053ECF00912719 /* AdapterClient.h */,
+				1824AD0323053EF900912719 /* Interface.h */,
+				1824AD0423053F2600912719 /* Adaptee.h */,
+				1824AD0623053FAB00912719 /* Adapter.h */,
+				1824AD0723053FDC00912719 /* Product.h */,
+				1824AD082305409800912719 /* LegacyProduct.h */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		1824AD0923054B4900912719 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				1824AD0E23054F3200912719 /* TimeImpl.h */,
+				1824AD0F23054FF300912719 /* CivilianTimeImpl.h */,
+				1824AD10230550E400912719 /* ZuluTimeImp.h */,
+				1824AD112305515600912719 /* Time.h */,
+				1824AD12230551DD00912719 /* CivilianTime.h */,
+				1824AD132305521F00912719 /* ZuluTime.h */,
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

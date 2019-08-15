@@ -15,8 +15,16 @@
 #include "LinuxWidgetFactory.h"
 #include "TestAfter.h"
 #include "TestBuilder.h"
+
 #include "ObjectPool.h"
+
 #include "CommandManager.h"
+
+#include "Adapter.h"
+#include "AdapterClient.h"
+
+#include "CivilianTime.h"
+#include "ZuluTime.h"
 
 #define WINDOW
 int main(int argc, const char * argv[]) {
@@ -69,11 +77,29 @@ int main(int argc, const char * argv[]) {
     */
     
     // prototype
+    /*
     ICamCommand* command = CommandManager::createCommand(CommandType::DOME_COMMAND);
     command->execute();
     
     delete command;
     command = CommandManager::createCommand(CommandType::SURVEILANCE_COMMAND);
     command->execute();
+    */
+    
+    // Adapter
+    // using composition (has-a relationship) implementation
+    /*
+    Adapter* adapter = new Adapter();
+    AdapterClient* aClient = new AdapterClient(adapter);
+    Product* p = aClient->requestProduct();
+    std::cout << "Product name: " << p->m_name << std::endl;
+    */
+    
+    // Bridge
+    CivilianTime* cTime = new CivilianTime(3, 50, true);
+    cTime->tell();
+    
+    ZuluTime* zTime = new ZuluTime(3, 51, 5);
+    zTime->tell();
     return 0;
 }
