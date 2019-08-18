@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <assert.h>
 
 #include "Singleton.hpp"
 #include "StoogeFactory.hpp"
@@ -30,6 +31,15 @@
 #include "CoRectangle.h"
 #include "CoComplexShape.h"
 
+#include "ConcreteComponent.h"
+#include "DecoratorAddFlower.h"
+#include "DecoratorAddColor.h"
+
+#include "FlyWeightFactory.h"
+
+#include "SmartPointer.h"
+#include "P_Subject.h"
+
 #define WINDOW
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -37,23 +47,25 @@ int main(int argc, const char * argv[]) {
     
     // creational patterns
     // singleton
+#ifdef TEST_SINGLETON
     //Singleton& singleton = Singleton::GetInstance();
     //singleton.print();
-    
-    //Singleton* pSingleton = Singleton::Instance();
-    //pSingleton->print();
+    Singleton* pSingleton = Singleton::Instance();
+    pSingleton->print();
+#endif
     
     // Factory
     // simple factory
-    //Stooge* stooge = StoogeFactory::GetInstance().createStooge("larry");
-    //stooge->slapSticks();
-    
+#ifdef TEST_FACTORY
+    Stooge* stooge = StoogeFactory::GetInstance().createStooge("larry");
+    stooge->slapSticks();
+#endif
     // abstract factory before
-    //TestBefore* tf = new TestBefore();
-    //tf->draw();
+#ifdef TEST_ABSTRACT_FACTORY
+    TestBefore* tf = new TestBefore();
+    tf->draw();
     
     // abstract factory after
-    /*
     WidgetFactory* widgetFactory;
 #ifdef WINDOW
     widgetFactory = new WindowWidgetFactory();
@@ -65,10 +77,10 @@ int main(int argc, const char * argv[]) {
     
     TestBuilder* testBuilder = new TestBuilder();
     testBuilder->readDocument();
-     */
+#endif
     
     // object pool
-    /*
+#ifdef TEST_OBJECT_POOL
     ObjectPool* pool = ObjectPool::getInstance();
     Resource* res1 = pool->acquireResource();    
     Resource* res2 = pool->acquireResource();
@@ -78,35 +90,36 @@ int main(int argc, const char * argv[]) {
     pool->releaseResource(res1);
     pool->releaseResource(res2);
     delete pool;
-    */
+#endif
     
     // prototype
-    /*
+#ifdef TEST_PROTOTYPE
     ICamCommand* command = CommandManager::createCommand(CommandType::DOME_COMMAND);
     command->execute();
     
     delete command;
     command = CommandManager::createCommand(CommandType::SURVEILANCE_COMMAND);
     command->execute();
-    */
+#endif
     
     // Adapter
     // using composition (has-a relationship) implementation
-    /*
+#ifdef TEST_ADAPTER
     Adapter* adapter = new Adapter();
     AdapterClient* aClient = new AdapterClient(adapter);
     Product* p = aClient->requestProduct();
     std::cout << "Product name: " << p->m_name << std::endl;
-    */
+#endif
     
     // Bridge
     // Double abstraction
-    /*CivilianTime* cTime = new CivilianTime(3, 50, true);
+#ifdef TEST_BRIDGE
+    CivilianTime* cTime = new CivilianTime(3, 50, true);
     cTime->tell();
     
     ZuluTime* zTime = new ZuluTime(3, 51, 5);
     zTime->tell();
-    */
+#endif
     
     /*
     int length = 10;
@@ -123,6 +136,7 @@ int main(int argc, const char * argv[]) {
     
     // Composite
     // Graphic editor example
+#ifdef TEST_COMPOSITE
     CoShape* line = new CoLine(10, 5, 20, 4);
     line->renderToScreen();
     
@@ -144,6 +158,42 @@ int main(int argc, const char * argv[]) {
     complex->addChild(line);
     complex->removeChild(line);
     complex->renderToScreen();
+#endif
     
+#ifdef TEST_DECORATOR
+    Component* component = new DecoratorAddColor(new DecoratorAddFlower(new DecoratorAddColor(new DecoratorAddFlower(new ConcreteComponent(), "rose"), "red"), "lavender"), "purple");
+    component->doOperation();
+    std::cout << std::endl;
+#endif
+    
+#ifdef TEST_FLYWEIGHT
+    FlyWeight* bird1 = FlyWeightFactory::getInstance()->getFlyWeight(FlyWeightType::FWT_BIRD);
+    FlyWeight* bird2 = FlyWeightFactory::getInstance()->getFlyWeight(FlyWeightType::FWT_BIRD);
+    
+    bird1->doOperation(new ExtrinsicState(0,0, 5,5));
+    bird2->doOperation(new ExtrinsicState(9,9, 15,15));
+    
+    assert((bird1 == bird2));
+#endif
+    
+#ifndef TEST_PROXY
+    P_Subject* subject = new P_Subject("Micheal Jackson");
+    SmartPointer<P_Subject> smartPtr(subject);
+    smartPtr->doOperation();
+    (*smartPtr).doOperation();
+    {
+        SmartPointer<P_Subject> secondSmartPtr(smartPtr);
+    }
+    {
+        SmartPointer<P_Subject> thirdSmartPtr(subject);
+        thirdSmartPtr = smartPtr;
+    }
+    
+    if (smartPtr)
+    {
+        std::cout << "subject is not deleted here\n";
+    }
+    
+#endif
     return 0;
 }

@@ -12,6 +12,7 @@
 		181F23032302AD6A00258081 /* LarryStooge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181F23012302AD6A00258081 /* LarryStooge.cpp */; };
 		181F23062302ADB600258081 /* HenryStooge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181F23042302ADB600258081 /* HenryStooge.cpp */; };
 		181F23092302AE6600258081 /* StoogeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181F23072302AE6600258081 /* StoogeFactory.cpp */; };
+		1823F149230937DA00C4D6A3 /* FlyWeightFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1823F148230937DA00C4D6A3 /* FlyWeightFactory.cpp */; };
 		1824ACF82303E50800912719 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1824ACF72303E50800912719 /* ObjectPool.cpp */; };
 		1824AD00230411F400912719 /* CommandManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1824ACFF230411F400912719 /* CommandManager.cpp */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,14 @@
 		181F231C2302C80800258081 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		181F231D2302C84600258081 /* RTFReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTFReader.h; sourceTree = "<group>"; };
 		181F231E2302C99B00258081 /* TestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBuilder.h; sourceTree = "<group>"; };
+		1823F1432309322900C4D6A3 /* IntrinsicState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntrinsicState.h; sourceTree = "<group>"; };
+		1823F1442309323300C4D6A3 /* ExtrinsicState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtrinsicState.h; sourceTree = "<group>"; };
+		1823F1452309328400C4D6A3 /* FlyWeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyWeight.h; sourceTree = "<group>"; };
+		1823F146230932A300C4D6A3 /* ConcreteFlyWeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConcreteFlyWeight.h; sourceTree = "<group>"; };
+		1823F1472309370600C4D6A3 /* FlyWeightFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyWeightFactory.h; sourceTree = "<group>"; };
+		1823F148230937DA00C4D6A3 /* FlyWeightFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlyWeightFactory.cpp; sourceTree = "<group>"; };
+		1823F14B2309433000C4D6A3 /* SmartPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartPointer.h; sourceTree = "<group>"; };
+		1823F14E230949E000C4D6A3 /* P_Subject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P_Subject.h; sourceTree = "<group>"; };
 		1824ACF52303E31500912719 /* Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
 		1824ACF62303E3C900912719 /* ObjectPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
 		1824ACF72303E50800912719 /* ObjectPool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectPool.cpp; sourceTree = "<group>"; };
@@ -80,6 +89,11 @@
 		1824AD1723067BF900912719 /* CoLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoLine.h; sourceTree = "<group>"; };
 		1824AD1823067C4800912719 /* CoRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoRectangle.h; sourceTree = "<group>"; };
 		1824AD1923067C6400912719 /* CoComplexShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoComplexShape.h; sourceTree = "<group>"; };
+		1824AD1B2306A43C00912719 /* Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		1824AD1C2306A46A00912719 /* ConcreteComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConcreteComponent.h; sourceTree = "<group>"; };
+		1824AD1D2306A4D600912719 /* Decorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Decorator.h; sourceTree = "<group>"; };
+		1824AD1E2306A5AE00912719 /* DecoratorAddFlower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoratorAddFlower.h; sourceTree = "<group>"; };
+		1824AD1F2306A68800912719 /* DecoratorAddColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoratorAddColor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +186,28 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		1823F1422309320700C4D6A3 /* FlyWeight */ = {
+			isa = PBXGroup;
+			children = (
+				1823F1432309322900C4D6A3 /* IntrinsicState.h */,
+				1823F1442309323300C4D6A3 /* ExtrinsicState.h */,
+				1823F1452309328400C4D6A3 /* FlyWeight.h */,
+				1823F146230932A300C4D6A3 /* ConcreteFlyWeight.h */,
+				1823F1472309370600C4D6A3 /* FlyWeightFactory.h */,
+				1823F148230937DA00C4D6A3 /* FlyWeightFactory.cpp */,
+			);
+			path = FlyWeight;
+			sourceTree = "<group>";
+		};
+		1823F14A2309420300C4D6A3 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				1823F14B2309433000C4D6A3 /* SmartPointer.h */,
+				1823F14E230949E000C4D6A3 /* P_Subject.h */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
 		1824ACF42303DFA500912719 /* ObjectPool */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +246,9 @@
 		1824AD012305388600912719 /* StructuralPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				1823F14A2309420300C4D6A3 /* Proxy */,
+				1823F1422309320700C4D6A3 /* FlyWeight */,
+				1824AD1A2306A42100912719 /* Decorator */,
 				1824AD1423067B7A00912719 /* Composite */,
 				1824AD0923054B4900912719 /* Bridge */,
 				1824AD0523053F6400912719 /* Adapter */,
@@ -252,6 +291,18 @@
 				1824AD1923067C6400912719 /* CoComplexShape.h */,
 			);
 			path = Composite;
+			sourceTree = "<group>";
+		};
+		1824AD1A2306A42100912719 /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				1824AD1B2306A43C00912719 /* Component.h */,
+				1824AD1C2306A46A00912719 /* ConcreteComponent.h */,
+				1824AD1D2306A4D600912719 /* Decorator.h */,
+				1824AD1E2306A5AE00912719 /* DecoratorAddFlower.h */,
+				1824AD1F2306A68800912719 /* DecoratorAddColor.h */,
+			);
+			path = Decorator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1823F149230937DA00C4D6A3 /* FlyWeightFactory.cpp in Sources */,
 				1824ACF82303E50800912719 /* ObjectPool.cpp in Sources */,
 				1824AD00230411F400912719 /* CommandManager.cpp in Sources */,
 				181F22F42302A86800258081 /* main.cpp in Sources */,
