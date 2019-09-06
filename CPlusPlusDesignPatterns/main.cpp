@@ -40,6 +40,15 @@
 #include "SmartPointer.h"
 #include "P_Subject.h"
 
+#include "CoRClient.h"
+#include "NegativeHandler.h"
+#include "PositiveHandler.h"
+#include "ZeroHandler.h"
+
+#include "Switch.h"
+#include "LampLight.h"
+#include "Television.h"
+
 #define WINDOW
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -176,7 +185,7 @@ int main(int argc, const char * argv[]) {
     assert((bird1 == bird2));
 #endif
     
-#ifndef TEST_PROXY
+#ifdef TEST_PROXY
     P_Subject* subject = new P_Subject("Micheal Jackson");
     SmartPointer<P_Subject> smartPtr(subject);
     smartPtr->doOperation();
@@ -193,7 +202,31 @@ int main(int argc, const char * argv[]) {
     {
         std::cout << "subject is not deleted here\n";
     }
-    
 #endif
+    
+#ifdef TEST_CHAIN_OF_RESPONSIBILITY
+    // handler chain: negative => positive => zero => nullptr
+    AbstractHandler* zeroHandler = new ZeroHandler(nullptr);
+    AbstractHandler* positiveHandler = new PositiveHandler(zeroHandler);
+    AbstractHandler* negativeHandler = new NegativeHandler(positiveHandler);
+    
+    CoRClient* client = new CoRClient(negativeHandler);
+    client->handleRequest(new AbstractRequest(-10));
+    client->handleRequest(new AbstractRequest(10));
+    client->handleRequest(new AbstractRequest(0));
+#endif
+    
+#ifdef TEST_COMMAND
+    Switch* lightSwitch = new Switch(new LampLight());
+    lightSwitch->switchOn();
+    lightSwitch->switchOff();
+    
+    Switch* tvSwitch = new Switch(new Television());
+    tvSwitch->switchOn();
+    tvSwitch->switchOff();
+#endif
+
+    
+    
     return 0;
 }

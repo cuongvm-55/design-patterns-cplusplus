@@ -94,6 +94,19 @@
 		1824AD1D2306A4D600912719 /* Decorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Decorator.h; sourceTree = "<group>"; };
 		1824AD1E2306A5AE00912719 /* DecoratorAddFlower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoratorAddFlower.h; sourceTree = "<group>"; };
 		1824AD1F2306A68800912719 /* DecoratorAddColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoratorAddColor.h; sourceTree = "<group>"; };
+		18D440C6231E3EDE00F01BF4 /* ICommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICommand.h; sourceTree = "<group>"; };
+		18D440C7231E3F1400F01BF4 /* TurnOnCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOnCommand.h; sourceTree = "<group>"; };
+		18D440C8231E3F3000F01BF4 /* TurnOffCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOffCommand.h; sourceTree = "<group>"; };
+		18D440C9231E3F4300F01BF4 /* SwitchableDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchableDevice.h; sourceTree = "<group>"; };
+		18D440CA231E3F7600F01BF4 /* LampLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LampLight.h; sourceTree = "<group>"; };
+		18D440CB231E40E400F01BF4 /* Switch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Switch.h; sourceTree = "<group>"; };
+		18D440CC231E427400F01BF4 /* Television.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Television.h; sourceTree = "<group>"; };
+		18F6575423166D51008069C0 /* CoRClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoRClient.h; sourceTree = "<group>"; };
+		18F6575523166D8C008069C0 /* AbstractRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractRequest.h; sourceTree = "<group>"; };
+		18F6575723166DB9008069C0 /* AbstractHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractHandler.h; sourceTree = "<group>"; };
+		18F6575823166DD4008069C0 /* NegativeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NegativeHandler.h; sourceTree = "<group>"; };
+		18F6575923166DE1008069C0 /* ZeroHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZeroHandler.h; sourceTree = "<group>"; };
+		18F6575A23166DEE008069C0 /* PositiveHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PositiveHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +139,7 @@
 		181F22F22302A86800258081 /* CPlusPlusDesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				18F6575223166D13008069C0 /* BehaviourPatterns */,
 				1824AD012305388600912719 /* StructuralPatterns */,
 				1824ACFA23040DF000912719 /* CreationPatterns */,
 				181F22F32302A86800258081 /* main.cpp */,
@@ -303,6 +317,50 @@
 				1824AD1F2306A68800912719 /* DecoratorAddColor.h */,
 			);
 			path = Decorator;
+			sourceTree = "<group>";
+		};
+		18D440C5231E3EB900F01BF4 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				18D440C6231E3EDE00F01BF4 /* ICommand.h */,
+				18D440C7231E3F1400F01BF4 /* TurnOnCommand.h */,
+				18D440C8231E3F3000F01BF4 /* TurnOffCommand.h */,
+				18D440C9231E3F4300F01BF4 /* SwitchableDevice.h */,
+				18D440CA231E3F7600F01BF4 /* LampLight.h */,
+				18D440CB231E40E400F01BF4 /* Switch.h */,
+				18D440CC231E427400F01BF4 /* Television.h */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		18D440CD231E595D00F01BF4 /* Interpreter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interpreter;
+			sourceTree = "<group>";
+		};
+		18F6575223166D13008069C0 /* BehaviourPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				18D440CD231E595D00F01BF4 /* Interpreter */,
+				18D440C5231E3EB900F01BF4 /* Command */,
+				18F6575323166D2C008069C0 /* ChainOfResponsibility */,
+			);
+			path = BehaviourPatterns;
+			sourceTree = "<group>";
+		};
+		18F6575323166D2C008069C0 /* ChainOfResponsibility */ = {
+			isa = PBXGroup;
+			children = (
+				18F6575423166D51008069C0 /* CoRClient.h */,
+				18F6575523166D8C008069C0 /* AbstractRequest.h */,
+				18F6575723166DB9008069C0 /* AbstractHandler.h */,
+				18F6575823166DD4008069C0 /* NegativeHandler.h */,
+				18F6575923166DE1008069C0 /* ZeroHandler.h */,
+				18F6575A23166DEE008069C0 /* PositiveHandler.h */,
+			);
+			path = ChainOfResponsibility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

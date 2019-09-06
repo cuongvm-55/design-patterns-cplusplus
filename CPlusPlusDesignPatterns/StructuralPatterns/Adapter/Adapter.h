@@ -21,7 +21,11 @@ public:
         Adaptee* adaptee = new Adaptee();
         LegacyProduct* legacyProd = adaptee->legacyRequest();
         // convert data structure
-        return new Product(legacyProd->m_vendorName + "/" + legacyProd->m_serial);
+        Product* product = new Product(legacyProd->m_vendorName + "/" + legacyProd->m_serial);
+        
+        delete legacyProd;
+        delete adaptee;
+        return product;
     }
 };
 
